@@ -6,7 +6,7 @@ function send() {
   let url = 'https://spreadsheets.google.com/feeds/cells/1ppewigMFQe3UdxTR4RYwHl-sX3s9b66jnGfykdRz9dQ/1/public/values?alt=json'
   $.ajax({
     type: "get",
-    url: "https://script.google.com/macros/s/AKfycbz9gJNch20Usl0J9Gyl344c2trrIJAKtyItK00jtUlHCTNmjYI/exec",
+    url,
     data: {
       "name": name,
       "phone": phone,
