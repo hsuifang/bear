@@ -13,6 +13,7 @@ function send() {
     data: data,
     dataType: "JSON",
     success: function (response) {
+      console.log(response)
       alert('HI 熊熊')
     }
   });
