@@ -11,7 +11,6 @@ function send() {
     "timecode": new Date()
   }
   fetch(url, {
-    method: 'POST',
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json'
