@@ -1,27 +1,32 @@
 let sendButton = document.querySelector('button');
 
 function send() {
-  let name = document.querySelector('#nameValue').value;
-  let phone = document.querySelector('#phoneValue').value;
-  let url = 'https://script.google.com/macros/s/AKfycbz9gJNch20Usl0J9Gyl344c2trrIJAKtyItK00jtUlHCTNmjYI/exec'
-  let data = {
-    "name": name,
-    "phone": phone,
-    "demand": '需求',
-    "timecode": new Date()
+  var data = {
+    'name' : '',
+    'phone':'phone',
+    'time': '',
+    'order': '',
+    'price': 22,
   }
-  fetch(url, {
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json'
+  $.ajax({
+    type: "get",
+    url: "https://script.google.com/macros/s/AKfycbz3fU3FVDmIQehtWX6ecKuV_A67lE64FEQ-ekmOZ_jZDyY96z0/exec",
+    data: data,
+    dataType: "JSON",
+    success: function (response) {
+      console.log(response);
+      alert('感謝您的訂購！！');
     }
-  }).then(res => {
-    return res.json()
-  }).then(data => {
-    console.log(data)
-  }).catch(e => {
-    console.log(e)
-  })
+  });
+  // let name = document.querySelector('#nameValue').value;
+  // let phone = document.querySelector('#phoneValue').value;
+  // let url = 'https://script.google.com/macros/s/AKfycbz9gJNch20Usl0J9Gyl344c2trrIJAKtyItK00jtUlHCTNmjYI/exec'
+  // let data = {
+  //   "name": name,
+  //   "phone": phone,
+  //   "demand": '需求',
+  //   "timecode": new Date()
+  // }
   // $.ajax({
   //   url,
   //   data: {
