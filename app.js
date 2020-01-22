@@ -3,14 +3,13 @@ let sendButton = document.querySelector('button');
 function send() {
   var data = {
     'name' : '',
-    'phone':'phone',
-    'time': '',
-    'order': '',
-    'price': 22,
+    'phone':'09999999999',
+    'time': new Date(),
+    'demand': ''
   }
   $.ajax({
     type: "get",
-    url: "https://script.google.com/macros/s/AKfycbz3fU3FVDmIQehtWX6ecKuV_A67lE64FEQ-ekmOZ_jZDyY96z0/exec",
+    url: "https://script.google.com/macros/s/AKfycbz9gJNch20Usl0J9Gyl344c2trrIJAKtyItK00jtUlHCTNmjYI/exec",
     data: data,
     dataType: "JSON",
     success: function (response) {
